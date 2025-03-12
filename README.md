@@ -73,7 +73,7 @@ As dependências serão instaladas é necessário aguardar até que todas sejam 
 
 Aparecerá as informações abaixo, isso significa que está tudo CERTO.
 
-<img src="./img/dependenciaBackI.png"/>
+<img src="./img/dependenciasBackI.png"/>
 
 Conectar banco de dados:
 
