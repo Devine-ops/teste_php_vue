@@ -274,7 +274,9 @@ Foram criadas rotas para as requisições são elas:
 
 Route::post('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register']);
+
 //rota restrita
+
 Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::get('/users',[UserController::class, 'index']);
     Route::post('/logout',[LoginController::class, 'logout']);
