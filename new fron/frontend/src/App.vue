@@ -1,11 +1,9 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/login">Login</router-link>
-      <router-link to="/register">Criar Conta</router-link>
-    </nav>
-    <router-view />
-  </div>
+  <v-app>
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
@@ -14,6 +12,4 @@ export default {
 };
 </script>
 
-<style>
-/* Estilos básicos */
-</style>
+

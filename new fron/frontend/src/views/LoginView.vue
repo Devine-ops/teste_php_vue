@@ -1,33 +1,73 @@
 <template>
-  <div class="login-container">
-    <div class="login-card">
-      <h2>Login</h2>
+  <v-app>
+    <!-- Barra de navegação -->
+    <v-app-bar app>
+      
+      <v-toolbar-title>MONEY FLOW</v-toolbar-title>
+      <v-spacer></v-spacer>
 
-      <form @submit.prevent="handleLogin">
-        <div class="input-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" v-model="email" required />
-        </div>
+      <!-- Botões de Navegação -->
+      <v-btn to="/">Ir para Home</v-btn>
+      <v-btn text to="/login">Login</v-btn>
+      <v-btn text to="/register">Criar Conta</v-btn>
+    </v-app-bar>
 
-        <div class="input-group">
-          <label for="password">Senha</label>
-          <input type="password" id="password" v-model="password" required />
-        </div>
+    <!-- Conteúdo principal -->
+    <v-main>
+      <v-container class="login-container">
+        <v-row justify="center" align="center" class="fill-height">
+          <v-col cols="12" md="4">
+            <v-card class="pa-5" elevation="2">
+              <v-card-title>
+                <h2 class="text-center">Login</h2>
+              </v-card-title>
 
-        <button type="submit" class="login-btn" :disabled="loading">
-          {{ loading ? "Entrando..." : "Entrar" }}
-        </button>
+              <v-form @submit.prevent="handleLogin">
+                <v-text-field
+                  v-model="email"
+                  label="Email"
+                  type="email"
+                  required
+                  outlined
+                ></v-text-field>
 
-        <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
-      </form>
-    </div>
-  </div>
+                <v-text-field
+                  v-model="password"
+                  label="Senha"
+                  type="password"
+                  required
+                  outlined
+                ></v-text-field>
+
+                <v-btn
+                  type="submit"
+                  color="primary"
+                  class="w-100"
+                  :loading="loading"
+                  :disabled="loading"
+                >
+                  {{ loading ? "Entrando..." : "Entrar" }}
+                </v-btn>
+
+                <v-alert
+                  v-if="errorMessage"
+                  type="error"
+                  class="mt-3"
+                  dense
+                >{{ errorMessage }}</v-alert>
+              </v-form>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import axios from "axios";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
 const email = ref("");
 const password = ref("");
@@ -58,65 +98,3 @@ const handleLogin = async () => {
   }
 };
 </script>
-
-<style scoped>
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f5f5f5;
-}
-
-.login-card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 300px;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
-.input-group {
-  text-align: left;
-  margin-bottom: 15px;
-}
-
-.input-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.login-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #42b983;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-btn:disabled {
-  background-color: #999;
-  cursor: not-allowed;
-}
-
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 10px;
-}
-</style>
