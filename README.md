@@ -302,8 +302,6 @@ Os controllers foram criados dentro de uma pasta chamada API, para que fizesse s
 
 São um total de 5 controllers:
 
-
-
 AuthController é responsável pela criação do usuário. Ele valida os dados e cria a conta do usuário caso esteja algo fora do padrão da autenticação será emitido um erro na tela de Registro de conta.
 
 namespace App\Http\Controllers\Api;
