@@ -125,23 +125,11 @@ Esse atalho selecionará todas os simbolos (#). Agora apague!
 
 Substitua De:
 
-DB_CONNECTION=sqlite
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
-
+<img src="./img/de.png"/>
 
 Para:
 
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=gestao_financeira
-DB_USERNAME=root
-DB_PASSWORD=
+<img src="./img/para.png"/>
 
 Lembrando que o nome DB_DATABASE pode ser qualquer um que você queira.
 
@@ -283,6 +271,7 @@ Foi utilizado as próprias ferramentas que nele se encontram o SANCTUM para a ge
 Foram criadas rotas para as requisições são elas:
 
 //rota publica
+
 Route::post('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register']);
 //rota restrita
