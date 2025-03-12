@@ -32,24 +32,27 @@ class LoginController extends Controller
         }
     }
  
-    public function logout(User $user)
-    {
-        try{
+    // Função de logout
+    public function logout(Request $request)
+{
+    try {
+        // Acessar o usuário autenticado via middleware auth:sanctum
+        $user = Auth::user();
 
-            $user->tokens()->delete();
+        // Revogar o token atual
+        $request->user()->currentAccessToken()->delete();
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Deslogado com sucesso.',
-            ], 200);
-
-        } catch (Exception $e){
-
-            return response()->json([
-                'status' => false,
-                'message' => 'Não deslogado.',
-            ], 400);
-
-        }
+        return response()->json([
+            'status' => true,
+            'message' => 'Deslogado com sucesso.',
+        ], 200);
+    } catch (Exception $e) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Não deslogado.',
+        ], 400);
     }
+}
+
+
 }

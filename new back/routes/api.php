@@ -13,8 +13,8 @@ Route::post('/register', [AuthController::class, 'register']);
 //rota restrita
 Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::get('/users',[UserController::class, 'index']);
-    Route::post('/logout/{user}',[LoginController::class, 'logout']);
-
+    Route::post('/logout',[LoginController::class, 'logout']);
+    
     Route::middleware('auth:sanctum')->get('/categorias', [CategoriaController::class, 'index']);
     Route::post('/categorias', [CategoriaController::class, 'store']);
 
