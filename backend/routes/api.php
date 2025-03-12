@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 //rota publica
 Route::post('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register']);
+// Route::get('/users', [UserController::class, 'index']);
 //rota restrita
 Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::get('/users',[UserController::class, 'index']);

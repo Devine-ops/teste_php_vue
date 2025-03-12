@@ -22,7 +22,10 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
+            return response()->json([
+                'message' => 'Dados inválidos!',
+                'errors' => $validator->errors()
+            ], 422);
         }
 
         // Criando o usuário
