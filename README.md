@@ -314,8 +314,6 @@ São um total de 5 controllers:
 
 
 AuthController é responsável pela criação do usuário. Ele valida os dados e cria a conta do usuário caso esteja algo fora do padrão da autenticação será emitido um erro na tela de Registro de conta.
-<?php
-
 
 namespace App\Http\Controllers\Api;
 
@@ -370,7 +368,7 @@ class AuthController extends Controller
 
 
 CategoriaController é responsável pela criação das categorias e pela função HTTP GET que exibe as categorias criadas e pela função POST que cria uma nova categoria. É uma rota privada só pode ser acessada com autenticação via token.
-<?php
+
 
 
 namespace App\Http\Controllers\Api;
@@ -406,7 +404,7 @@ class CategoriaController extends Controller
 
 LoginController é responsável pelas funções de login e logout. No Login ele gera um token que é responsável pela autenticação da sessão do usuário.
 Na parte do logout o usuário solicita o logout e o token é destruído.
-<?php
+
 
 
 namespace App\Http\Controllers\Api;
@@ -483,7 +481,7 @@ A função destroy deleta a movimentação solicitada usando o seu id.
 
 A função update encontra a movimentação pelo id, verifica se o usuário é o dono logo após isso valida os dados recebidos e atualiza a movimentação.
 
-<?php
+
 
 
 namespace App\Http\Controllers\Api;
@@ -592,7 +590,7 @@ class MovimentacaoController extends Controller
 
 
 Por último temos o UserController onde para fins de teste podemos listar todos os usuários caso queira usar para criar uma tabela com todos os usuários pode ser usada com POSTMAN ou INSOMINIA.
-<?php
+
 
 
 namespace App\Http\Controllers\Api;
@@ -628,7 +626,7 @@ Os models são modelos para criar as tabelas no banco de dados.
 Foram criados 2 models dentro da pasta models.
 
 1 - categoria: Usada para o campo nome da categoria
-<?php
+
 
 
 namespace App\Models;
@@ -652,7 +650,6 @@ class Categoria extends Model
 
 2 - movimentacao: usado apra criar uma categoria com os campos abaixo
 
-<?php
 
 
 namespace App\Models;
