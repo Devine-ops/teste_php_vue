@@ -754,21 +754,13 @@ Falando dos componentes temos 1 component:
 
 CategoriaForm: que tem a responsabilidade dentro do Dashboard de criar uma categoria para ser utilizada.
 
-<img src="./img/editTrue.png"/>
-
 Na pasta Views temos 3 arquivos, são eles:
 
 DashboardView: responsável pela visualização das movimentações e criação de categorias usando o componente CategoriaForm.
 
-<img src="./img/editTrue.png"/>
-
 LoginView: é o código responsável pelo login do usuário.
 
-<img src="./img/editTrue.png"/>
-
 RegisterView: é o arquivo responsável pelo registro do usuário na plataforma Money Flow.
-
-<img src="./img/editTrue.png"/>
 
 HomeView: contém o arquivo responsável pela home do projeto.
 
