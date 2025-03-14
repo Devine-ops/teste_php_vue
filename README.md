@@ -737,3 +737,39 @@ http://127.0.0.1:8000/api/movimentacoes PUT
   "description": "Recebimento de pagamento"
 }
 
+<h1>Informações Técnicas Frontend</h1>
+
+O frontend foi construido com Vue3 como solicitado utilizando o Vuetify e o  material desing. Para as requisições HTTP foi utilizado o Axios para facilitar a comunicação ao inves da utilização do javascript puro.
+
+foi utilizada a estrutura de componentes para arquivos reutilizavéis e Views para arquivos completos.
+
+<img src="./img/explicacaoFront.png"/>
+
+Foram criados componentes e views que são responsáveis por cada parte do código de forma isolada, facilitando a manutenção posteriormente. Foi também criado 
+uma pasta com nome de (services) que contem a configuração do Axios. Além também da criação da pasta (router) contendo o arquivo main configurado com a necessidade do projeto, nesse caso são as rotas do projeto. 
+
+Temos uma pasta chamada de (plugin) que tem as configurações do Vuetify.
+
+Falando dos componentes temos 1 component: 
+
+CategoriaForm: que tem a responsabilidade dentro do Dashboard de criar uma categoria para ser utilizada.
+
+<img src="./img/editTrue.png"/>
+
+Na pasta Views temos 3 arquivos, são eles:
+
+DashboardView: responsável pela visualização das movimentações e criação de categorias usando o componente CategoriaForm.
+
+<img src="./img/editTrue.png"/>
+
+LoginView: é o código responsável pelo login do usuário.
+
+<img src="./img/editTrue.png"/>
+
+RegisterView: é o arquivo responsável pelo registro do usuário na plataforma Money Flow.
+
+<img src="./img/editTrue.png"/>
+
+HomeView: contém o arquivo responsável pela home do projeto.
+
+

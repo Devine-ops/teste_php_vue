@@ -2,14 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import RegisterView from '../views/RegisterView.vue'; // A página de registro
 import LoginView from '@/views/LoginView.vue';
 import DashboardView from '@/views/DashboardView.vue';
-import Home from '../components/Home.vue';
+import HomeView from '../views/HomeView.vue';
 
 const routes = [
 
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: HomeView,
   },
 
   {
